@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:elevation="7dp"
-    android:background="@color/colorAccent"
+    android:background="@android:color/white"
     android:fitsSystemWindows="true">
 
     <RelativeLayout
@@ -96,7 +96,7 @@
                     android:layout_marginEnd="@dimen/fab_margin"
                     android:src="@mipmap/ic_launcher_round"
                     android:visibility="invisible"
-                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:backgroundTint="@color/colorPrimary"
                     app:elevation="6dp"
                     app:pressedTranslationZ="12dp" />
 
@@ -124,7 +124,7 @@
                     android:layout_marginEnd="@dimen/fab_margin"
                     android:src="@mipmap/ic_launcher_round"
                     android:visibility="invisible"
-                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:backgroundTint="@color/colorPrimary"
                     app:elevation="6dp"
                     app:pressedTranslationZ="12dp" />
 
@@ -151,7 +151,9 @@
                     android:layout_margin="16dp"
                     android:background="@color/colorPrimaryDark"
                     android:clickable="true"
-                    android:src="@android:drawable/btn_plus"
+                    android:src="@mipmap/plus"
+                    android:visibility="visible"
+                    app:backgroundTint="@color/colorPrimaryDark"
                     app:layout_anchor="@id/scrollViewMenu"
                     app:layout_anchorGravity="bottom|right|end"
                     app:rippleColor="#FFF" />
