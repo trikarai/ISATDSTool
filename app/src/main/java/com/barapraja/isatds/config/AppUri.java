@@ -6,6 +6,6 @@ package com.barapraja.isatds.config;
 
 public class AppUri {
     //public static String BASE_URL = "http://103.23.22.223/isat/MobileAccess/";
-    public static String BASE_URL = "http://103.23.22.223/Dart/MobileAccess/";
+    public static String BASE_URL = "http://103.23.22.223/dart/MobileAccess/";
 
 }
