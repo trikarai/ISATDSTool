@@ -19,4 +19,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="no_text"> </string>
+
+    <string-array name="autocomplete">
+        <item>admin_bdg@dilo.com</item>
+        <item>tri@dilo.id</item>
+        <item>inandar@barapraja.com</item>
+    </string-array>
 </resources>
