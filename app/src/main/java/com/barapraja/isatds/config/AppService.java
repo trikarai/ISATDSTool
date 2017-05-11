@@ -13,9 +13,32 @@ import retrofit2.http.POST;
 public interface AppService {
 
     @FormUrlEncoded
-    @POST("login/")
+    @POST("user/auth/")
     Call<ResponseBody> authenticate(
-            @Field("email") String email,
+            @Field("username") String email,
             @Field("password") String password);
+
+
+    @POST("user/listStock")
+    Call<ResponseBody> listStock(
+
+    );
+
+    @POST("user/list/")
+    Call<ResponseBody> listHotspot(
+
+    );
+
+    @POST("user/checkin/")
+    Call<ResponseBody> checkin(
+
+    );
+
+    @POST("user/checkout/")
+    Call<ResponseBody> checkout(
+
+    );
+
+
 
 }

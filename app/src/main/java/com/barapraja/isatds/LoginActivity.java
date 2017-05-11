@@ -125,12 +125,12 @@ public class LoginActivity extends AppCompatActivity{
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
-            cancel = true;
-        }
+            cancel = true;}
+//        } else if (!isEmailValid(email)) {
+//            mEmailView.setError(getString(R.string.error_invalid_email));
+//            focusView = mEmailView;
+//            cancel = true;
+//        }
         return cancel;
     }
 
@@ -196,13 +196,13 @@ public class LoginActivity extends AppCompatActivity{
                     //Toast.makeText(LoginActivity.this, "R: " + response.body().string(), Toast.LENGTH_SHORT).show();
                     JSONObject jsonR = new JSONObject(response.body().string());
                     boolean error = jsonR.getBoolean("status");
-                    String err_msg = jsonR.optString("err_msg");
+                    String err_msg = jsonR.optString("msg");
                     if(error) {
 
                         JSONObject data = jsonR.getJSONObject("data");
 
-                        String userId = data.getString("user_id");
-                        String name = data.getString("user_name");
+                        String userId = data.getString("id");
+                        String name = data.getString("name");
 
                         Log.e(TAG, "READ Object :" + userId + " " + name);
 
