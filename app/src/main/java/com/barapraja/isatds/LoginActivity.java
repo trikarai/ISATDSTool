@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
