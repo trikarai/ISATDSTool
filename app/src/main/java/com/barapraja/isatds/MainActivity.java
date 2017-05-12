@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import com.barapraja.isatds.adapter.DrawerAdapter;
 import com.barapraja.isatds.config.AppPref;
+import com.barapraja.isatds.stock.AddStock;
 
 import java.util.Objects;
 
@@ -288,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, AddStock.class));
             }
         });
 
