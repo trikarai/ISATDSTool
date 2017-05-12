@@ -34,8 +34,8 @@ public class AddStock extends AppCompatActivity {
     @BindView(R.id.btn_submit)
     Button _btnsubmit;
 
-    @BindView(R.id.auto_focus) CompoundButton autoFocus;
-    @BindView(R.id.use_flash) CompoundButton useFlash;
+//    @BindView(R.id.auto_focus) CompoundButton autoFocus;
+//    @BindView(R.id.use_flash) CompoundButton useFlash;
 
     private static final int RC_BARCODE_CAPTURE = 9001;
     private static final String TAG = "BarcodeMain";

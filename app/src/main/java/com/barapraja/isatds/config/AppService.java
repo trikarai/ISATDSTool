@@ -29,9 +29,12 @@ public interface AppService {
 
     );
 
+    @FormUrlEncoded
     @POST("user/checkin/")
     Call<ResponseBody> checkin(
-
+            @Field("userId") String userId,
+            @Field("hotspotId") String hotspotId,
+            @Field("checkInTime") String checkinTime
     );
 
     @POST("user/checkout/")

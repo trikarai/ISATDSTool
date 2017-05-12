@@ -33,6 +33,7 @@
         <activity android:name=".stock.AddStock"/>
         <activity android:name=".stock.ViewStock"/>
         <activity android:name=".barcode.BarcodeCaptureActivity"/>
+        <activity android:name=".checkin.CheckInActivity"/>
     </application>
 
 </manifest>

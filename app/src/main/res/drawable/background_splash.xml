@@ -3,6 +3,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/logoindosatloginpage"/>
+            android:src="@mipmap/splash"/>
     </item>
 </layer-list>

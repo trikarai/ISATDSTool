@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <include layout="@layout/toolbar"/>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="0.24" />
+
+
+    <Button
+        android:id="@+id/btn_checkin"
+        android:text="Check In"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_checkout"
+        android:text="Check Out"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

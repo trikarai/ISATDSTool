@@ -25,8 +25,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.barapraja.isatds.adapter.DrawerAdapter;
+import com.barapraja.isatds.checkin.CheckInActivity;
 import com.barapraja.isatds.config.AppPref;
 import com.barapraja.isatds.stock.AddStock;
 
@@ -53,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle mDrawerToggle;
 
     String TITLES[] = {"Home","Hotspot","Check In","Sales","Product","Training","Logout"};
-    int ICONS[] = {R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round};
+    int ICONS[] = {R.mipmap.ic_home_black_24dp,R.mipmap.ic_settings_input_antenna_black_24dp,R.mipmap.ic_note_add_black_24dp,R.mipmap.ic_find_in_page_black_24dp,R.mipmap.ic_sim_card_black_24dp,R.mipmap.ic_book_black_24dp,R.mipmap.ic_exit_to_app_black_24dp};
 
-    int PROFILE = R.mipmap.ic_launcher_round;
+    int PROFILE = R.mipmap.profile;
 
     //end Navigation Drawer
 
@@ -130,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
             public void onScrollChanged() {
                 //int scrollX = menuScroll.getScrollX(); //for horizontalScrollView
                 int scrollY = menuScroll.getScrollY(); //for verticalScrollView
-
                 if (scrollY > 0 || scrollY < 0 && _fab.isShown()){
                     _fab.hide();
                 }else{
@@ -215,10 +216,12 @@ public class MainActivity extends AppCompatActivity {
                             //startActivity(new Intent(HomeActivity.this, OpportunityPhaseListActivity.class));
                             break;
                         case 3:
-                            //Toast.makeText(HomeActivity.this,"APPOINTMENT",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this,"Check In",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(MainActivity.this, CheckInActivity.class));
                             break;
                         case 4:
-                            //Toast.makeText(HomeActivity.this,"PROSPECT",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this,"Sales",Toast.LENGTH_SHORT).show();
+
                             break;
                         case 5:
                             //Toast.makeText(HomeActivity.this,"Retention",Toast.LENGTH_SHORT).show();
