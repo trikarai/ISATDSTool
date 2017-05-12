@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout Drawer;
     ActionBarDrawerToggle mDrawerToggle;
 
-    String TITLES[] = {"Target","Opportunity","Appointment","Funnel View","Retention","Simulation","Logout"};
+    String TITLES[] = {"Home","Hotspot","Check In","Sales","Product","Training","Logout"};
     int ICONS[] = {R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher_round};
 
     int PROFILE = R.mipmap.ic_launcher_round;
