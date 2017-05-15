@@ -31,6 +31,7 @@ import com.barapraja.isatds.adapter.DrawerAdapter;
 import com.barapraja.isatds.checkin.CheckInActivity;
 import com.barapraja.isatds.config.AppPref;
 import com.barapraja.isatds.stock.AddStock;
+import com.barapraja.isatds.stock.ViewStock;
 
 import java.util.Objects;
 
@@ -300,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, ViewStock.class));
             }
         });
 

@@ -41,13 +41,16 @@ public class CheckInActivity extends AppCompatActivity {
     private String hotspotId;
     private String checkinTime;
 
+    public static String keyCheckin = "checkin";
+
     @BindView(R.id.btn_checkin) Button _btncheckin;
     @BindView(R.id.btn_checkout) Button _btncheckout;
 
     ProgressDialog progressDialog;
 
     //SHARED LOGIN
-    SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences,checkinPreferences;
+    SharedPreferences.Editor editor;
     //END SHARED LOGIN
 
     @Override
@@ -60,6 +63,15 @@ public class CheckInActivity extends AppCompatActivity {
 
         // Get the app's shared preferences
         sharedPreferences = getApplicationContext().getSharedPreferences(AppPref.LOGIN_PREF, Context.MODE_PRIVATE);
+        checkinPreferences = getApplicationContext().getSharedPreferences(AppPref.CHECKIN_PREF,Context.MODE_PRIVATE);
+
+        if(checkinPreferences.getBoolean(keyCheckin,false)){
+            Toast.makeText(CheckInActivity.this, "local checkin pref detected " , Toast.LENGTH_SHORT).show();
+            _btncheckin.setVisibility(View.INVISIBLE);
+        }else{
+            Toast.makeText(CheckInActivity.this, "local checkin pref not detected ", Toast.LENGTH_SHORT).show();
+        }
+
         userId = sharedPreferences.getString("userId", null);
 
         //hardcode hotspot
@@ -107,6 +119,9 @@ public class CheckInActivity extends AppCompatActivity {
                     String err_msg = jsonR.optString("msg");
                     if (error){
                         Toast.makeText(CheckInActivity.this,"TRUE "+err_msg,Toast.LENGTH_LONG).show();
+                        editor = checkinPreferences.edit();
+                        editor.putBoolean(keyCheckin, true);
+                        editor.commit();
                         hideDialog();
                     }else {
                         Toast.makeText(CheckInActivity.this,"FALSE "+err_msg,Toast.LENGTH_LONG).show();

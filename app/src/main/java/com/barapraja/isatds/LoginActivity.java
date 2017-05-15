@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity{
 
     public static String keyUserId = "userId";
     public static String keyName = "name";
+    public static String keyAreaId = "areaId";
     public static String keyEmail = "email";
     public static String keyLogged = "logged";
 
@@ -195,6 +196,7 @@ public class LoginActivity extends AppCompatActivity{
                 try {
                     //Toast.makeText(LoginActivity.this, "R: " + response.body().string(), Toast.LENGTH_SHORT).show();
                     JSONObject jsonR = new JSONObject(response.body().string());
+                    Log.d(TAG,"Respone :"+ jsonR);
                     boolean error = jsonR.getBoolean("status");
                     String err_msg = jsonR.optString("msg");
                     if(error) {
@@ -203,12 +205,14 @@ public class LoginActivity extends AppCompatActivity{
 
                         String userId = data.getString("id");
                         String name = data.getString("name");
+                        String areaId = data.optString("areaId");
 
-                        Log.e(TAG, "READ Object :" + userId + " " + name);
+                        Log.e(TAG, "READ Object :" + userId + " " + name + " "+ areaId );
 
                         editor = sharedPreferences.edit();
                         editor.putString(keyUserId, userId);
                         editor.putString(keyName, name);
+                        editor.putString(keyAreaId, areaId);
                         editor.putString(keyEmail, email);
                         editor.putString(keyLogged, "true");
                         editor.commit(); // Very important
@@ -226,8 +230,6 @@ public class LoginActivity extends AppCompatActivity{
                         //String errorMessage = jsonR.getString("err_msg");
                         //Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
                     }
-
-
                 } catch (JSONException | IOException e) {
                     showProgress(false);
                     e.printStackTrace();

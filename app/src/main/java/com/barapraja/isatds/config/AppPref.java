@@ -7,4 +7,5 @@ package com.barapraja.isatds.config;
 public class AppPref {
     public static final String LOGIN_PREF = "LoginPref";
     public static final String RESOURCE_PREF = "ResourcePref";
+    public static final String CHECKIN_PREF = "CheckInPref";
 }
