@@ -43,7 +43,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginActivity extends AppCompatActivity{
     private final String TAG = "LoginActivity";
     // UI references.
-    private AutoCompleteTextView mEmailView;
+    private EditText mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -70,8 +70,8 @@ public class LoginActivity extends AppCompatActivity{
         sharedPreferences = getApplicationContext().getSharedPreferences(AppPref.LOGIN_PREF, Context.MODE_PRIVATE);
 
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        populateAutoComplete();
+        mEmailView = (EditText) findViewById(R.id.username);
+        //populateAutoComplete();
         failedLoginMessage = (TextView) findViewById(R.id.failed_login);
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -135,11 +135,11 @@ public class LoginActivity extends AppCompatActivity{
         return cancel;
     }
 
-    private void populateAutoComplete(){
-        String[] countries = getResources().getStringArray(R.array.autocomplete);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,countries);
-        mEmailView.setAdapter(adapter);
-    }
+//    private void populateAutoComplete(){
+//        String[] countries = getResources().getStringArray(R.array.autocomplete);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,countries);
+//        mEmailView.setAdapter(adapter);
+//    }
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
         return email.contains("@");
